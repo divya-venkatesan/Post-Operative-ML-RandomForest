@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Post-Operative Care</title>
+
+</head>
+
+<body>
+ <div class="login">
+   <link rel="stylesheet" href="style.css">
+	<h1>Post-Operative Care Prediction</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+
+    <h3>L-Core Values</h3>
+    <input type="radio" name="L-Core" id="low" value="low"> low </input><br>
+    <input type="radio" name="L-Core" id="mid" value="mid"> mid </input><br>
+    <input type="radio" name="L-Core" id="high" value="high"> high </input><br>
+
+    <h3>L-Surf Values</h3>
+    <input type="radio" name="L-Surf" id="low" value="low"> low </input><br>
+    <input type="radio" name="L-Surf" id="mid" value="mid"> mid </input><br>
+    <input type="radio" name="L-Surf" id="high" value="high"> high </input><br>
+
+    <h3>L-O2 Values</h3>
+    <input type="radio" name="L-O2" id="excellent" value="excellent"> excellent </input><br>
+    <input type="radio" name="L-O2" id="good" value="good"> good </input><br>
+
+    <h3>L-BP Values</h3>
+    <input type="radio" name="L-BP" id="low" value="low"> low </input><br>
+    <input type="radio" name="L-BP" id="mid" value="mid"> mid </input><br>
+    <input type="radio" name="L-BP" id="high" value="high"> high </input><br>
+
+    <input type="text" name="L-Core" placeholder="Patient's Internal Temp (Celsius)" required="required" />
+    <input type="text" name="L-Surf" placeholder="Patient's Surface Temp (Celsius)" required="required" />
+		<input type="text" name="L-O2" placeholder="Oxygen Saturation (%)" required="required" />
+		<input type="text" name="L-BP" placeholder="Last BP Reading" required="required" />
+    <input type="text" name="Surf-STBL" placeholder="Stability of patient's surface temp" required="required" />
+    <input type="text" name="Core-STBL" placeholder="Stability of patient's core temp" required="required" />
+    <input type="text" name="BP-STBL" placeholder="Stability of patient's BP" required="required" />
+    <input type="text" name="Comfort" placeholder="patient's comfort level at discharge (0-20)" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
